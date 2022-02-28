@@ -38,3 +38,13 @@ En este repositorio se genera la creación del api para el model.
 ```bash
 >heroku container:push web --app docker-fastapi-joenvihe
 ```
+
+- Despues es hora de lanzar la 1era version
+```bash
+>heroku container:release web --app docker-fastapi-joenvihe
+```
+
+- Haciendo la prueba de la llamada al modelo desde heroku, abrir el **git bash**
+```bash
+>curl --header "Content-Type: application/json" --request POST --data '{"duration":"2","month":"3","date":"16","age":"57","balance":"0.452462","pout":"1","job":"4","camp":"1","contact":"2","house":"1"}' http://docker-fastapi-joenvihe.herokuapp.com/predict
+```
