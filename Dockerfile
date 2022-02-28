@@ -1,15 +1,15 @@
-FROM python:3.7-alpine
+FROM python:3.7
 
-COPY ./requirements.txt /requirements.txt
-COPY ./params.yaml /params.yaml
-
-RUN pip install -r requirements.txt
-
-COPY ./start.sh /start.sh
-
-RUN chmod +x /start.sh
+RUN pip install --upgrade setuptools
 
 COPY ./app /app
 COPY ./models /models
+COPY ./params.yaml /params.yaml
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r requirements.txt
+
+COPY ./start.sh /start.sh
+RUN chmod +x /start.sh
+
 
 CMD ["./start.sh"]

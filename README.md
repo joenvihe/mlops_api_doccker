@@ -22,3 +22,19 @@ En este repositorio se genera la creación del api para el model.
 >curl --header "Content-Type: application/json" --request POST --data '{"duration":"2","month":"3","date":"16","age":"57","balance":"0.452462","pout":"1","job":"4","camp":"1","contact":"2","house":"1"}' http://127.0.0.1:8008/predict
 ```
 
+- Se loguea a **heroku**
+```bash
+>heroku login
+```
+
+- Se debe levantar el **docker desktop**
+
+- Se loguea a **heroku container**
+```bash
+>heroku container:login
+```
+
+- Se carga el contenedor a la plataforma de **Heroku**, previamente se debio crear el app
+```bash
+>heroku container:push web --app docker-fastapi-joenvihe
+```
